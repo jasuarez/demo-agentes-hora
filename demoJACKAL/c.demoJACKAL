@@ -1,0 +1,8 @@
+(conversation 
+  (name kqml-achieve)
+  (author "J.A.")
+  (date "21/12/2000")
+  (start-state START)
+  (accepting-states ACHIEVED ERROR)
+  (transitions
+    (arc (label achieve)   (from START)     (to Achieve)    (match "(achieve)"))))
