@@ -6,3 +6,8 @@ Descripcion:
 
 Se trata de un agente que devuelve la hora del sistema en el cual se encuentra, y de otro agente
 que pide tal hora. Se emplea KQML para la comunicacion (la implementacion JKQML).
+
+$Log$
+Revision 1.2  2000/12/18 12:33:41  obelix
+Se ponen los logs
+
