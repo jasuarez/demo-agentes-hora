@@ -1,0 +1,16 @@
+$Id$
+
+
+Descripcion:
+-----------
+
+Se trata de un agente que devuelve la hora del sistema en el cual se encuentra, y de otro agente
+que pide tal hora. Se emplea KQML para la comunicacion (la implementacion JATLite).
+
+Log:
+---
+$Log$
+Revision 1.1  2000/12/20 11:08:01  obelix
+Se ha creado el servidor de hora
+
+

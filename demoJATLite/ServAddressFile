@@ -1,0 +1,10 @@
+MyAddress
+Servidor,null,5556,MessageRouter,(agent-info  :password jhc)
+RouterAddress
+Enrutador,aliana.dc.fi.udc.es,4402,MessageRouter,(MessageRouter)
+RouterRegistrarAddress
+Registrador,aliana.dc.fi.udc.es,4401,MessageRouter,(MessageRouterRegistrar)
+RegisterRequest
+no
+MaxIdleTime
+300

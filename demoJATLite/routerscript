@@ -1,0 +1,23 @@
+# Router Name. The address file should have the Router address with the Router name.
+Enrutador
+# Address file(include Router, RotuerRegistrar, and other) path
+/home/obelix/development/demoJATLite/AddressFile
+# Incoming mail box directory. should ended with '/'
+/home/obelix/development/demoJATLite/incoming/
+# password file path.  
+/home/obelix/development/demoJATLite/Password
+# registry file path. 
+/home/obelix/development/demoJATLite/Registry
+# Maxiumum duration time for the Router Receiver Thread. 
+300
+# Maximum trial time for reconnecting to the stand alone off line agent
+5
+# Reconnection trial time period in minutes( here, 1 hr)
+60
+# Maximum trial time to send reserved message
+5
+# Sending reserved message time period
+60
+# Router agent action sleep time in milliseconds
+5000
+

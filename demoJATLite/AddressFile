@@ -1,0 +1,5 @@
+# This is an example file for the static Agent Addresses
+# AgentID, Host InetAddress, Port no, Type, Description
+# Since this is ServerThread, you do not need to specify InetAddress
+Enrutador,null,4402,RouterServerThread,(agent-info :agent-name AMR)
+Registrador,null,4401,RegistrarServerThread,(Registrar)
