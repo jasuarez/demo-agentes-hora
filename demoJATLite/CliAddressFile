@@ -1,9 +1,9 @@
 MyAddress
 Cliente,null,5557,MessageRouter,(agent-info  :password jhc)
 RouterAddress
-Enrutador,aliana.dc.fi.udc.es,4402,MessageRouter,(MessageRouter)
+Enrutador,shoham.dc.fi.udc.es,4402,MessageRouter,(MessageRouter)
 RouterRegistrarAddress
-Registrador,aliana.dc.fi.udc.es,4401,MessageRouter,(MessageRouterRegistrar)
+Registrador,shoham.dc.fi.udc.es,4401,MessageRouter,(MessageRouterRegistrar)
 RegisterRequest
 no
 MaxIdleTime
