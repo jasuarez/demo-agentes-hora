@@ -24,7 +24,7 @@
       (bypass_conversations false)
       (bypass_distributor false))
     (network
-      (machine_name "aliana")
+      (machine_name "shoham")
       (tcpip_domain_name "dc.fi.udc.es")
       (protocols
         (_1 (name "J3.TcpipService") 
@@ -38,18 +38,18 @@
       (preferred_subdomain ans)
       (agents
 	(_1 (name ans) (protocol tcpip2) 
-            (address "aliana.dc.fi.udc.es:5501"))))
+            (address "shoham.dc.fi.udc.es:5501"))))
     (rom_enabled true) 
     (ans_enabled true) 
     (conversations
-      "file:///home/obelix/development/demoJACKAL/c.kqml-achieve"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-ask-if"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-ask-one"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-ask-all"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-recommend-one"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-recommend-all"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-tell"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-register"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-unregister"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-advertise"
-      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-subscribe" )))
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-achieve"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-ask-if"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-ask-one"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-ask-all"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-recommend-one"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-recommend-all"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-tell"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-register"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-unregister"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-advertise"
+      "file:///home/jota/SOFT/KQML/JACKAL/conversations/c.kqml-subscribe" )))

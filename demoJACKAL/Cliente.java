@@ -1,7 +1,6 @@
 /*$Id$*/
 
 import J3.*;
-import java.util.*;
 
 /**
  * Class Cliente
@@ -17,7 +16,7 @@ import java.util.*;
 class Cliente {
     public Cliente () {
 	try {
-	    Intercom intercom = new Intercom ("cliente", "file:///home/obelix/development/demoJACKAL/common.kqmlrc");
+	    Intercom intercom = new Intercom ("cliente", "file:///home/jota/eclipse/demoJACKAL/common.kqmlrc");
 	    System.out.println ("CLI>> Envio el mensaje");
 	    Message ad = new Message ("(achieve :sender.ans cliente :receiver servidor.ans :language Java :ontology time :content TIME?)");
 	    Message reply = (Message) intercom.attend (ad, null, null, 5, false, true, 1, true, false).dequeue ();
