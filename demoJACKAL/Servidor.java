@@ -18,9 +18,10 @@ class Servidor {
 	    Message reply;
 	    Message response;
 	    Intercom intercom = new Intercom ("servidor", "file:///home/obelix/development/demoJACKAL/server.kqmlrc");
-	    intercom.stderr ("El servidor esta esperando");
+	    intercom.stderr ("SERV>> El servidor esta esperando");
 	    FIFO queue = intercom.attend (null, null, null, 8, false, true, 0, true, false);
 	    while ((reply = (Message) queue.dequeue ()) != null) {
+		System.out.println ("SERV>> Alguien pregunta la hora");
 		response = new Message ("(tell)");
 		response.put ("in-reply-to", reply.get ("reply-with"));
 		response.put ("language", "Java");

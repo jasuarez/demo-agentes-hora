@@ -12,13 +12,13 @@
       (nms false)
       (mat false)
       (int false)
-      (msg false)
+      (msg true)
       (ars false)
       (rom false)
       (tcp false)
       (vmd false)
       (vml false)
-      (console false)))
+      (console true)))
   (runtime
     (path
       (bypass_conversations false)
@@ -42,5 +42,14 @@
     (rom_enabled true) 
     (ans_enabled true) 
     (conversations
-	"file:///home/obelix/development/demoJACKAL/c.demoJACKAL" )))
-
+      "file:///home/obelix/development/demoJACKAL/c.kqml-achieve"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-ask-if"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-ask-one"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-ask-all"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-recommend-one"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-recommend-all"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-tell"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-register"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-unregister"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-advertise"
+      "file:///home/obelix/SOFT/KQML/JACKAL/conversations/c.kqml-subscribe" )))
