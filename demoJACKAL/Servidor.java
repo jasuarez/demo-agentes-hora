@@ -17,7 +17,7 @@ class Servidor {
 	try {
 	    Message reply;
 	    Message response;
-	    Intercom intercom = new Intercom ("server", "file:///home/obelix/development/demoJACKAL/server.kqmlrc");
+	    Intercom intercom = new Intercom ("servidor", "file:///home/obelix/development/demoJACKAL/server.kqmlrc");
 	    intercom.stderr ("El servidor esta esperando");
 	    FIFO queue = intercom.attend (null, null, null, 8, false, true, 0, true, false);
 	    while ((reply = (Message) queue.dequeue ()) != null) {
