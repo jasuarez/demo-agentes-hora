@@ -5,12 +5,11 @@
 import RouterLayer.AgentClient.*;
 import Abstract.*;
 import KQMLLayer.*;
-import java.util.*;
 import java.io.*;
 
 
 /**
- * Class Servidor
+ * Class Cliente
  *
  * Muestra la hora actual al agente que se lo pida
  *
@@ -18,8 +17,8 @@ import java.io.*;
  * @version $Revision$
  */
 
-public class Servidor extends RouterClientAction {
-    public Servidor (Address myAddress, Address routerAddress, Address registerAddress,
+public class Cliente extends RouterClientAction {
+    public Cliente (Address myAddress, Address routerAddress, Address registerAddress,
 		     int durationTime, boolean registerRequest) {
 	super (myAddress, routerAddress, registerAddress, durationTime);
 	try {
@@ -28,7 +27,7 @@ public class Servidor extends RouterClientAction {
 		register (registerAddress, myAddress);
 	    connect (myAddress);
 	} catch (Exception ex) {
-	    System.out.println ("Clase Servidor (primera excepcion)");
+	    System.out.println ("Clase Cliente (primera excepcion)");
 	    System.out.println ("==================================");
 	    ex.printStackTrace ();
 	    System.exit (1);
@@ -38,33 +37,42 @@ public class Servidor extends RouterClientAction {
     public boolean Act (Object obj) {
 	String stampMsg = (String) obj;
 	try {
-	    KQMLmail mail = new KQMLmail (stampMsg, 0);
+	    KQMLmail mail = new KQMLmail (stampMsg, 1);
 	    _mailQueue.addElement (mail);
 	    KQMLmessage kqml = mail.getKQMLmessage ();
 	    String perf = kqml.getValue ("performative");
 	    String content = kqml.getValue ("content");
-	    String receiver = kqml.getValue ("sender");
 	    if (content == null) {
-		sendErrorMessage (kqml);
+		System.out.println (">> Contenido vacio");
 		return false;
 	    }
-	    if (perf.equals ("achieve") && content.equals ("TIME?")) {
-		System.out.println ("SERV>> Recibido un achieve");
-		String sendMsg = "(tell :sender ";
-		sendMsg = sendMsg + getName () + " :receiver " + receiver;
-		sendMsg = sendMsg + " :language Java :content \"" + new Date ().toString () + "\")";
-		sendMessage (sendMsg);
+	    if (perf.equals ("tell")) {
+		System.out.println ("La hora en el servidor es: " + content);
 	    } else {
-		sendErrorMessage (kqml);
+		System.out.println ("CLI>> No entiendo el mensaje: " + perf);
 		return false;
 	    }
+	    unregister ();
 	} catch (Exception ex) {
-	    System.out.println ("Clase Servidor (segunda excepcion)");
+	    System.out.println ("Clase Cliente (segunda excepcion)");
 	    System.out.println ("==================================");
 	    ex.printStackTrace ();
 	    System.exit (1);
 	}
 	return true;
+    }
+
+    protected void obtenerHora () {
+	String sendMsg = "(achieve :sender Cliente :receiver Servidor :language Java :content TIME?)";
+	try {
+	    sendMessage (sendMsg);
+	    System.out.println ("CLI>> Pregunto la hora");
+	} catch (Exception ex) {
+	    System.out.println ("Clase Cliente (tercera excepcion)");
+	    System.out.println ("=================================");
+	    ex.printStackTrace ();
+	    System.exit (1);
+	}
     }
 
     protected void sendErrorMessage (KQMLmessage kqml) {
@@ -74,10 +82,9 @@ public class Servidor extends RouterClientAction {
 	sendMsg = sendMsg + " :language Java :content (" + kqml.getSendString () + "))";
 	try {
 	    sendMessage (sendMsg);
-	    addToDeleteBuffer (0);
 	} catch (Exception ex) {
-	    System.out.println ("Clase Servidor (tercera excepcion)");
-	    System.out.println ("==================================");
+	    System.out.println ("Clase Cliente (cuarta excepcion)");
+	    System.out.println ("================================");
 	    ex.printStackTrace ();
 	    System.exit (1);
 	}
@@ -87,7 +94,7 @@ public class Servidor extends RouterClientAction {
     
     public static void main(String args[]) {
 	if (args.length != 1) {
-	    System.out.println ("Uso: java Servidor <direccion>");
+	    System.out.println ("Uso: java Cliente <direccion>");
 	} else {
 	    Address myAddress = null;
 	    Address routerAddress = null;
@@ -120,11 +127,12 @@ public class Servidor extends RouterClientAction {
 		    }
 		}
 		in.close ();
-		Servidor serv = new Servidor (myAddress, routerAddress, registerAddress, idleTime, registerRequest);
-		serv.start ();
+		Cliente cliente = new Cliente (myAddress, routerAddress, registerAddress, idleTime, registerRequest);
+		cliente.obtenerHora ();
+		cliente.start ();
 	    } catch (Exception ex) {
-		System.out.println ("Clase Servidor (cuarta excepcion)");
-		System.out.println ("=================================");
+		System.out.println ("Clase Cliente (quinta excepcion)");
+		System.out.println ("================================");
 		ex.printStackTrace ();
 		System.exit (1);
 	    }
