@@ -19,13 +19,17 @@ import java.util.*;
 public class TimeInterpreter implements ContentInterpreter {
     public ResponseSet doInterpret (Conversation conv, KQML msg)
 	throws ContentException, PerformativeHandlerNotFoundException {
+	System.out.println ("Entro en Timeinterpreter");
 	KQMLManager km = conv.getKQMLManager ();
 	String performative = msg.getPerformative ();
 	if (performative.equalsIgnoreCase (KQML.ACHIEVE)) {
+	    System.out.println ("Se ha recibido un 'achieve'");
 	    return doAchieve (conv, msg);
 	} else if (performative.equalsIgnoreCase (KQML.TELL)) {
+	    System.out.println ("Se ha recibido un 'tell'");
 	    return doTell (conv, msg);
 	} else if (performative.equalsIgnoreCase (KQML.ERROR)) {
+	    System.out.println ("Se ha recibido un 'error'");
 	    return doError (conv, msg);
 	} else {
 	    throw new PerformativeHandlerNotFoundException ("No se puede tratar el mensaje");

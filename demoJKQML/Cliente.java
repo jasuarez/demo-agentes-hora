@@ -54,9 +54,9 @@ public class Cliente extends SkeletonAgent {
 	    peticionHora.setLanguage ("Java");
 	    peticionHora.setOntology ("time");
 	    peticionHora.setContent ("TIME?");
-	    Conversation conv;
-	    conv = km.sendMessage (peticionHora);
-	    String hora = (String) conv.waitAndGetResponse (60000);
+	    Conversation conv = km.sendMessage (peticionHora);
+	    String hora = (String) conv.waitAndGetResponse (60000); //FALLA AQUI
+	    System.out.println (">> Despues del fallo");
 	    System.out.println ("La hora que me ha dado el servidor es: " + hora);
 	} catch (Exception ex) {
 	    System.err.println ("Clase Cliente");
