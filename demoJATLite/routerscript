@@ -1,13 +1,13 @@
 # Router Name. The address file should have the Router address with the Router name.
 Enrutador
 # Address file(include Router, RotuerRegistrar, and other) path
-/home/obelix/development/demoJATLite/AddressFile
+/home/jota/SOFT/KQML/JATLite/demoJATLite/AddressFile
 # Incoming mail box directory. should ended with '/'
-/home/obelix/development/demoJATLite/incoming/
+/home/jota/SOFT/KQML/JATLite/demoJATLite/incoming/
 # password file path.  
-/home/obelix/development/demoJATLite/Password
+/home/jota/SOFT/KQML/JATLite/demoJATLite/Password
 # registry file path. 
-/home/obelix/development/demoJATLite/Registry
+/home/jota/SOFT/KQML/JATLite/demoJATLite/Registry
 # Maxiumum duration time for the Router Receiver Thread. 
 300
 # Maximum trial time for reconnecting to the stand alone off line agent
