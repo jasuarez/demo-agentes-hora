@@ -1,0 +1,9 @@
+$Id$
+
+
+Descripcion:
+-----------
+
+Se trata de un agente que devuelve la hora del sistema en el cual se encuentra, y de otro agente
+que pide tal hora. Se emplea KQML para la comunicacion (la implementacion Jackal).
+
